@@ -1,21 +1,21 @@
 while True:
-           time = input("Donne moi un temps en seconde ")
+    time = input("Donne moi un temps en seconde ")
 
-           h, m = divmod(int(time),3600)
+    h, m = divmod(int(time),3600)
 
-           s, ss =divmod(m,60)
+    s, ss =divmod(m,60)
 
-           t, tt =divmod(ss,60)
+    t, tt =divmod(ss,60)
 
-           print("Voila ça fait " + str(h) + " heures, " + str(s) + " minutes et " + str(tt) + " secondes !")
+    print("Voila ça fait " + str(h) + " heures, " + str(s) + " minutes et " + str(tt) + " secondes !")
 
-           while True:
+    while True:
             answer = str(input('Recommencer (y/n): '))
             if answer in ('y', 'n'):
                 break
             print("invalid input.")
-            if answer == 'y':
+    if answer == 'y':
                  continue
-            else:
+    else:
              print("Goodbye")
-            break
+    break
