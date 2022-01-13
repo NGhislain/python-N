@@ -1,34 +1,34 @@
-valeur=[0,0,0,0,0]
+print("Hello mon garçon. 😎")
+grades_number = input("Combien veux-tu calculer de note(s)? ") 
 
-#prise des notes et écritures dans la variable
-for i in range(5) :
-    u=i
-    list = i+1
-    valeur[int(i)] = input("entre la note "+str(i+1)+":")
+print("D'accord. Super. Génial. Ma gueule. 😋")
+print("Entre moi " + grades_number +" notes, de 0 à 20 s'il te plait. Et je te rends la moyenne!")
 
-    if int(valeur[i])>int(20) :
-        valeur[i]=0
-        u=i
-        print("Recommence et utilese un nombre entre 0 et 20")
-        valeur[int(i)] = input("entre la note "+str(i)+":")
+print()
 
+# Liste de notes
+grades = []
 
-print(valeur)
+# range(max) > range(5) > 0 ... 4
+# range(min, max) > range(1, 5) > 1 ... 4
+for i in range(int(grades_number)) :
+    # Demande la  note à l'utilisateur
+    grade = int(input("Entre la note n°" + str(i + 1) + ": "))
 
+    while (grade > 20) or (grade < 0):
+        print("Ta note n'est pas valide! Réessaye. 🥱")
+        grade = int(input("Entre la note n°" + str(i + 1) + ": "))
 
-#calcul de la moyenne 
-note =str((int(valeur[0])+int(valeur[1])+int(valeur[2])+int(valeur[3])+int(valeur[4]))/int(5))
-print(str(note)+"/20")
+    # Ajoute la note à la liste
+    grades.append(grade)
 
+grades_sum = 0
 
-#afficher une remarque par rapport aux points
-if float(note) <= float(4) :
-    print("pas terrible.")
-elif float(note) <= float(9) :
-    print("pas au top. Motivez-vous les gars.")
-elif float(note) <= float(14) :
-    print("bonne! Continuez comme ça.")
-elif float(note) <= float(19) :
-    print("au top! Vous êtes les meilleurs.")
-else :
-    print("INSANE! Prenez ma place.")
+# Calcule la somme des notes
+for grade in grades :
+    grades_sum = grades_sum + grade
+
+# Calcule la moyenne
+average = grades_sum / int(grades_number)
+
+print("La moyenne vaut " + str(average))
